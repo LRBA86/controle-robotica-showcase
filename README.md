@@ -84,7 +84,7 @@ O levantamento dos sinais mostrou de 31 a 39 entradas digitais, conforme o tipo 
 
 ### Animação gerada por script
 
-O vídeo foi produzido com scripts na API do Fusion 360, que posicionam peças e câmera a cada quadro e restauram o modelo ao final.
+O vídeo foi produzido com scripts na API do Fusion 360, que posicionam peças e câmera a cada quadro e restauram o modelo ao final. Cada um dos 280 quadros passou pelo render local do Fusion em 720p.
 
 ## Ferramentas
 
