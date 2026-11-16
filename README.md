@@ -12,13 +12,13 @@ Projeto mecânico e visual de um controle portátil de alta densidade de comando
 
 | Área | O que o projeto reúne |
 |---|---|
-| Comandos analógicos | 2 joysticks de 3 eixos, 2 gimbals e 5 potenciômetros |
+| Comandos analógicos | 2 joysticks de 3 eixos, 2 gimbals e 6 potenciômetros |
 | Comandos digitais | 10 toggles M6, 10 botões, 4 balancins de trim e seletor rotativo de 7 posições |
 | Segurança | Botão de emergência físico, com guarda contra acionamento acidental |
 | Rádio | Dois links independentes, sendo um interno e um módulo removível |
 | Energia | 2 células 21700 em série, com porta de acesso na tampa |
 | Conectividade | USB-C de painel, jack de trainer e conector circular de expansão |
-| Ergonomia | Grips de TPU, botões traseiros, alça com engate QD e vibração nas empunhaduras |
+| Ergonomia | Grips de TPU, botões traseiros, ponto único de alça no centro de massa e vibração nas empunhaduras |
 
 ## O controle
 
@@ -58,14 +58,25 @@ A largura da carcaça foi limitada a 250 mm. O layout precisou acomodar todos os
 
 As transições foram refinadas com base em revisão visual detalhada.
 
-| Chanfro dos toggles | Rebaixo lateral | Trims |
-|---|---|---|
-| ![Chanfro](media/05_chanfro_toggles.png) | ![Rebaixo](media/06_rebaixo_lateral.png) | ![Trims](media/07_trims.png) |
+| Chanfro dos toggles | Rebaixo lateral |
+|---|---|
+| ![Chanfro](media/05_chanfro_toggles.png) | ![Rebaixo](media/06_rebaixo_lateral.png) |
 
 - As placas dos toggles deixaram de parecer peças aplicadas e passaram a ter cantos arredondados e transição contínua com a carcaça.
 - Os toggles foram redistribuídos em espaçamento uniforme de 12,5 mm.
 - Os rebaixos laterais foram remodelados para que as paredes sigam contínuas até a curva da carcaça.
 - Os balancins ganharam acabamento fosco, setas em baixo relevo e divisão central.
+- Os LEDs de status do painel foram retirados, porque a tela já mostra essas informações. Ficaram só os LEDs dos próprios botões.
+
+### Alça e equilíbrio
+
+O controle pesa perto de 1,9 kg e é usado pendurado no pescoço enquanto as mãos operam os gimbals. Foram estudados pontos de alça nas laterais, na tampa traseira e na borda inferior. Nas laterais, a alça cruzava os antebraços. Na tampa, ela raspava na carcaça. Na borda inferior, o controle pendia para a frente e forçava as mãos contra os gimbals.
+
+A solução foi calcular o centro de massa e reorganizar o centro do painel em volta dele. Os potenciômetros passaram a seis, três de cada lado com 25 mm entre centros para caber os dedos. O seletor rotativo ficou no centro, e a alça prende num único olhal giratório logo abaixo. Por baixo do painel, o olhal fixa numa porca presa num alojamento sextavado, com disco de apoio e nervuras em cruz. Assim a força da alça se espalha pelo painel em vez de ficar só na rosca.
+
+| Centro do painel | Olhal da alça |
+|---|---|
+| ![Centro do painel](media/07_centro_painel.png) | ![Olhal da alça](media/08_olhal_alca.png) |
 
 ### Orçamento de entradas e saídas
 
