@@ -6,7 +6,7 @@ Projeto mecânico e visual de um controle portátil de alta densidade de comando
 
 [Assista à demonstração completa](media/demonstracao.mp4): giro de 360°, vista explodida e remontagem.
 
-> **Status:** projeto mecânico e visual concluído em CAD. Elétrica e firmware estão em desenvolvimento, e ainda não há protótipo físico.
+> **Status:** projeto mecânico e visual concluído em CAD. Agora está na fase de protótipo: a versão atual do modelo recebe módulos prontos numa placa principal provisória, e a elétrica e o firmware seguem em desenvolvimento.
 
 ## Destaques
 
@@ -16,8 +16,8 @@ Projeto mecânico e visual de um controle portátil de alta densidade de comando
 | Comandos digitais | 10 toggles M6, 10 botões, 4 balancins de trim e seletor rotativo de 7 posições |
 | Segurança | Botão de emergência físico, com guarda contra acionamento acidental |
 | Rádio | Dois links independentes, sendo um interno e um módulo removível |
-| Energia | 2 células 21700 em série, com porta de acesso na tampa |
-| Conectividade | USB-C de painel, jack de trainer e conector circular de expansão |
+| Energia | 2 células 21700 em série, com BMS, carga pelo USB-C, porta de acesso na tampa e interruptor geral |
+| Conectividade | USB-C de painel na borda frontal (carga e joystick USB no PC) e conector circular de expansão |
 | Ergonomia | Grips de TPU, botões traseiros, ponto único de alça no centro de massa e vibração nas empunhaduras |
 
 ## O controle
@@ -44,9 +44,25 @@ flowchart LR
     MCU --> L1[Link de rádio interno]
     MCU --> L2[Módulo de rádio removível]
     B[Bateria 2S] --> P[Gestão de energia] --> MCU
+    MCU --> U[USB-C: joystick no PC]
 ```
 
 A arquitetura elétrica ainda está em definição, e este diagrama pode mudar.
+
+## Versão de protótipo
+
+Para montar o primeiro protótipo à mão, o modelo ganhou uma versão própria. Ela usa a placa de desenvolvimento do microcontrolador e módulos prontos encaixados numa placa principal provisória. A placa definitiva, com tudo integrado, vem depois.
+
+| Interior do protótipo | Tampa de acesso frontal |
+|---|---|
+| ![Interior do protótipo](media/10_interior_prototipo.png) | ![Tampa de acesso frontal](media/09_tampa_frontal.png) |
+
+- **Acesso de desenvolvimento:** uma tampa na borda frontal abre para baixo, como um capô, e dá acesso às portas USB da placa de desenvolvimento e ao conector de gravação, sem abrir a tampa traseira. Ela gira em pinos impressos na própria peça e fecha com um parafuso.
+- **USB-C de painel na frente:** a porta de uso final carrega a bateria e faz o controle aparecer no PC como joystick USB. Ela fica separada das ligações de desenvolvimento. O furo segue o contorno do encaixe do conector, com rebaixo interno para as travas.
+- **Interruptor geral:** o jack de trainer saiu e deu lugar a um interruptor tipo gangorra, na borda inferior, ao lado do conector circular.
+- **Fixação:** os pontos que são desmontados recebem insertos de latão aplicados a quente e parafusos Torx, com só duas pontas de chave no controle todo.
+
+![Borda inferior com o interruptor geral](media/11_borda_inferior.png)
 
 ## Desafios de projeto
 
@@ -84,7 +100,7 @@ O levantamento dos sinais mostrou de 31 a 39 entradas digitais, conforme o tipo 
 
 ### Animação gerada por script
 
-O vídeo foi produzido com scripts na API do Fusion 360, que posicionam peças e câmera a cada quadro e restauram o modelo ao final. Cada um dos 280 quadros passou pelo render local do Fusion em 720p.
+O vídeo foi produzido com scripts na API do Fusion 360, que posicionam peças e câmera a cada quadro e restauram o modelo ao final. Nesta atualização, os 228 quadros da versão de protótipo foram capturados direto da área de trabalho do Fusion em 720p, em lotes curtos para não travar o programa.
 
 ## Ferramentas
 
